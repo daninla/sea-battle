@@ -7,13 +7,10 @@
   min-height: 100vh;
   margin-top: 100px;
 }
-
 .grid-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
 }
-
 .letters {
   display: grid;
   grid-template-columns: repeat(10, 60px);
@@ -21,12 +18,11 @@
   place-items: center;
   font-weight: bold;
 }
-
 .game,
 .header {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
 }
-
 .top-left {
   width: 60px;
   height: 60px;
@@ -40,37 +36,29 @@
   font-weight: bold;
   align-items: center;
 }
-
 .letters div,
 .numbers div {
   border: 1px solid black;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 }
-
-
 .board {
   display: grid;
   grid-template-columns: repeat(10, 60px);
   grid-template-rows: repeat(10, 60px);
-
   width: 600px;
   height: 600px;
   outline: 1px #000000 solid;
   background:
     linear-gradient(to right, black 1px, transparent 1px),
     linear-gradient(to bottom, black 1px, transparent 1px);
-
   background-size: 60px 60px;
 }
-
 .ship {
   border: 2px solid black;
 }
-
 .purple {
   background: purple;
 }
@@ -83,7 +71,6 @@
 .red {
   background: red;
 }
-
 .s1 {
   grid-area: 1 / 1 / 2 / 3;
 }
@@ -93,28 +80,30 @@
 .s3 {
   grid-area: 1 / 7 / 2 / 11;
 }
-
 .s4 {
   grid-area: 3 / 1 / 7 / 2;
 }
 .s5 {
   grid-area: 3 / 6 / 4 / 9;
 }
-
 .s6 {
   grid-area: 3 / 10 / 5 / 11;
 }
 .s7 {
   grid-area: 6 / 10 / 9 / 11;
 }
-
 .s8 {
   grid-area: 6 / 6 / 8 / 7;
 }
 .s9 {
   grid-area: 8 / 1 / 9 / 3;
 }
-
 .s10 {
   grid-area: 10 / 4 / 11 / 11;
+}
+.sea-icon {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 }
